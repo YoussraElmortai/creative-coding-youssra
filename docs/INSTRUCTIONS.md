@@ -1,50 +1,80 @@
-
-# Back to Static - Creative Coding Spike
-
-Ontwerp en maak creatieve oplossingen voor de interface.
+# Don't Repeat Yourself - Component Library
+Ontwikkel een website voor een opdrachtgever op basis van een component library.
 
 ## Context
+Deze leertaak hoort bij sprint 16 Don't Repeat Yourself. Dit is een opdracht die je deels individueel en deels als team uitvoert voor een opdrachtgever.
 
-Deze deeltaak hoort bij sprint # 17 Back to Static. Dit is een deeltaak die je in totaal drie keer individueel uitvoert. Bij de sprintplanning wordt de opdracht uitgelegd.
+Bij deze leertaak hoort de deeltaak:
 
-Deze deeltaak hoort bij de leertaak:
-- [back-to-static-site-generation](https://github.com/fdnd-task/back-to-static-static-site-generation)
+* [Component Building Block](https://github.com/fdnd-task/dont-repeat-yourself-component-building-block)
 
 ## Doel van deze opdracht
-
-Je leert hoe je met CSS en client-side JS creatieve oplossing voor de interface kan ontwerpen en maken.
+Je leert hoe je herbruikbare stukken code op een systematische manier ontsluit zodat jij en jouw mede frontenders ze kunnen gebruiken in andere projecten.
 
 ## Werkwijze
+Bij elke leertaak wordt de development-lifecycle doorlopen. Hierdoor ontwikkel je een standaard aanpak voor frontend praktijkvraagstukken, werk je systematisch aan leertaken, ervaar je de relevantie van het geleerde en verwerf je de kennis, houding en vaardigheden die de beroepspraktijk van je vraagt. De development lifecycle bestaat uit de stappen: Analyseren, Ontwerpen, Bouwen, Integreren en Testen.
 
-Je gaat werken op een manier die in scrum een *programming spike* wordt genoemd. Een spike is een taak gericht op het beantwoorden van een vraag of het verzamelen van informatie. In plaats van het produceren van een verzendbaar product. Bij sommige taken kan niet goed ingeschat  worden tot het ontwikkelteam daadwerkelijk wat werk verricht om een technische vraag of ontwerpprobleem op te lossen. De oplossing is dan om een zogenaamde 'spike' te creëren.
+De component library (letterlijk: een bibliotheek met componenten) die je gaat maken bestaat uit een serie herbruikbare bouwblokken voor een opdrachtgever in een apart project. Het voordeel van het gebruiken van een component library is dat alle projecten die voor deze opdrachtgever gemaakt worden terug kunnen verwijzen naar dezelfde component library. 
 
-> Creative coding is a type of computer programming in which the goal is to create something expressive instead of something functional. - [Wikipedia](https://en.wikipedia.org/wiki/Creative_coding)
+Door op deze manier te werken wordt de *developer experience* (hierna DX) beter omdat: 
+1. Uniformiteit wordt afgedwongen
+2. Atomic Design wordt omarmd
+3. Herhaling niet meer hoeft (DRY!)
+4. Bugs oplossen eenvoudiger wordt
+5. Samenwerken makkelijker wordt
 
-Voor de opdracht van de opdrachtgever ontwerp en maak je creatieve oplossingen voor de interface. Nu de website statisch gegenereerd wordt kun je al je skills inzetten om de interface te verrijken. De bedoeling is dat je gebruikers "oooh" en "aaaah" roepen en niet meer kunnen stoppen met klikken! Of Scrollen! Of gooien!
+Het omarmen van deze ontwikkelstrategie vereist wel enig schakelen in de manier waarop je over code denkt. Het wordt abstracter omdat er meer afhankelijkheden en abstracties in je code gaan plaatsvinden. Je gaat denken in termen van NPM packages in plaats van in componenten in één repository. Waarschijnlijk heb je vorige sprints de kracht van componenten in een lokaal project al ontdekt, nu is het tijd om externe componenten in te laden!
 
-Elke week ontwerp en maak je een creatieve oplossing, welke je op vrijdag gaat testen. Deze sprint ga je in drie *spikes*, 3 experimenten ontwerpen en maken.
+### Aanpak
 
-## Aanpak
+In deze leertaak vind je slechts een partiële instructie, namelijk voor het [opzetten van de structuur](#structuur-opzetten-team) die nodig is om een component library als project in NPM te krijgen. Als dit gelukt is begint eigenlijk de leertaak pas. Je gaat je component library inzetten bij de [doorontwikkeling van projecten](#doorontwikkeling-individueel) (lees user-stories) voor jouw opdrachtgever.
 
-1. Kies of bedenk een experiment om te gaan maken, gebruik hiervoor de (FDND Conceptroulette)[https://conceptroulette.fdnd.nl/]
-2. Zoek inspiratie op het web en schets (snel) een aantal ideeen uit in een wireflow
-4. Maak een breakdown-schets met hoe je het experiment in code zou kunnen maken
-5. Bouw je experiment en doe een user test op je klasgenoten
-6. Documenteer je proces in de wiki
-7. Checkpoint op vrijdag tijdens de code/design review
+#### Structuur opzetten (team)
 
-### Materiaal
+Het opzetten van de structuur voor een component library is een beetje een gedoe maar het loont als je dit eenmaal gedaan hebt.
 
-Creative coding Inspiratie
-- [7 secrets for enhancing UX with micro-interactions](https://www.webdesignerdepot.com/2015/07/7-secrets-for-enhancing-ux-with-micro-interactions/)
-- [Site of the day - Awwwards](https://www.awwwards.com/websites/)
-- [Playground Codrops](https://tympanus.net/codrops/category/playground/)
+1. Fork deze leertaak, in deze leertaak ga je de implementatie van de component library maken. Met andere woorden, je linkt in deze repository een andere repository welke de component library bevat.
+2. Maak een nieuwe repository aan op jouw GitHub omgeving, geef deze een logische naam, bijvoorbeeld: fdnd-components, bij de volgende stappen staat *CLib* als het om deze ‘andere’ repository gaat.
+3. *CLib* Initialiseer een nieuw SvelteKit library project!
+4. *CLib* Check package.json voor de benodigde scripts. Als alles gelukt is zie je het commando `package` bij het lijstje staan.
+5. *CLib* Maak om te testen een nieuw eenvoudig component aan in de /src/lib map, bijvoorbeeld `HelloWorld.svelte`
+6. *CLib* Roep het commando `npm run package` aan om in de repository een package klaar te zetten.
+7. *CLib* Bekijk de nieuw gegenereerde map `/package`
+8. *CLib* Pas in de gegenereerde `package.json` de belangrijke velden aan, zoals `name`, `version`, `description`, enzovoorts.
+9. *CLib* Publiceer gegenereerde package (dus niet het hele project!) als *scoped public package* via npm (zie bronnen). Het kan goed zijn dat je eerst een gebruiker en een organisatie moet aanmaken.
+10. Check npmjs.com en zoek jouw organisatie/package (supertof!)
+11. Initialiseer een SvelteKit skeletten project.
+11. Link jouw package als dependancy door `npm install organisatie/package` uit te voeren.
+12. Importeer jouw component door `import { HelloWorld } from 'organisatie/package`, zet het ergens neer met `<HelloWorld />` en test of het werkt.
+13. Ga verder bij [Doorontwikkeling](#doorontwikkeling-individueel)
+
+##### Bronnen:
+- [Don’t Repeat Yourself](http://wiki.c2.com/?DontRepeatYourself)
+- [SvelteKit](https://kit.svelte.dev/) voor het opstartscript
+- [svelte-package](https://kit.svelte.dev/docs/packaging) voor het verpakken van de componenten uit `/src/lib` in een nieuwe package. N.B.: Je krijgt een melding dat de package `svelte2tsx` geïnstalleerd moet worden, dat kan je doen met `npm install -D svelte2tsx`
+- [How to Create Svelte Component Libraries with SvelteKit (iets verouderd!)](https://medium.com/mkdir-awesome/how-to-create-svelte-component-libraries-with-sveltekit-98fd2ff12f0f)
+- [npm Docs](https://docs.npmjs.com/)
+- [Creating and publishing scoped public packages](https://docs.npmjs.com/creating-and-publishing-scoped-public-packages)
+- [How to Publish Your First npm Package](https://bretcameron.medium.com/how-to-publish-your-first-npm-package-b224296fc57b)
+- [How to publish packages to npm (the way the industry does things)](https://zellwk.com/blog/publish-to-npm/)
+
+#### Doorontwikkeling (individueel)
+
+Als de structuur staat kan je verder gaan aan de ontwikkeling voor jouw opdrachtgever. Eventueel kan je wat tijd besteden aan het overhevelen van herhaalde stukken code uit je oude projecten maar dat hoeft niet per se, je kunt ook opnieuw beginnen.
+
+1. Kies een user story uit de backlog van het project waar je aan gaat werken. De projecten staan bij [FDND Agency](https://github.com/fdnd-agency).  
+2. Kopieer/plak de user story waar jij aan gaat werken naar de Wiki van de geforkte repository, dit ga je ontwerpen en maken
+3. Documenteer je proces a.h.v de development life cycle
+4. En schrijf een goede readme
+5. Ga terug naar 1 tot de sprint voorbij is.
 
 ## Criteria
 
-Deze opdracht is done als je (in totaal 3x):
 
-- [ ] Je hebt een creative-coding experiment ontworpen en gemaakt
-- [ ] Je hebt in de wiki van de leertaak je proces gedocumenteerd
-- [ ] Je hebt in de Readme van de leertaak de experimenten gepresenteerd
+Deze opdracht is done als:
+
+- [ ] je een component library hebt gemaakt.
+- [ ] je hebt gewerkt volgens de verschillende fases van de development-lifecycle
+- [ ] je hebt je werk gedocumenteerd in de Readme en Wiki (user story, ontwerpbeslissingen, schetsen en code voorbeelden)
+- [ ] de website op Github staat en een live url heeft
 
