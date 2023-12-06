@@ -5,12 +5,12 @@
     import { onMount } from 'svelte';
 
 	gsap.registerPlugin(ScrollTrigger, TextPlugin);
+
+	
 </script>
 
-<header><img src="/logo.png"></header>
-<section></section>
-<section></section>
-<section></section>
+<header><img src="/logo.png" alt="plantswap"></header>
+<section class="banner"></section>
 
 <style>
 	header{
@@ -21,6 +21,14 @@
 
 	header img{
 		margin: 1rem;
+		background-color: rgba(0, 0, 0, 0);
+	}
+
+	.banner{
+		height: 10vh;
+		width: 100%;
+		background-color: var(--card-background);
+		border-bottom: solid 3px var(--card-background);
 	}
 
 </style>
