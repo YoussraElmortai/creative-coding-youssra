@@ -7,10 +7,20 @@
 	gsap.registerPlugin(ScrollTrigger, TextPlugin);
 </script>
 
-<header></header>
+<header><img src="/logo.png"></header>
 <section></section>
 <section></section>
 <section></section>
 
 <style>
+	header{
+		height: 10vh;
+		width: 100%;
+		border-bottom: solid 3px var(--card-background);
+	}
+
+	header img{
+		margin: 1rem;
+	}
+
 </style>
