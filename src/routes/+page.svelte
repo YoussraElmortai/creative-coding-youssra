@@ -1,14 +1,16 @@
 <script>
-// import { gsap } from 'gsap';
-// import { ScrollTrigger } from 'gsap/ScrollTrigger';
-// import { TextPlugin } from 'gsap/TextPlugin';
+	import { gsap } from 'gsap';
+	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+	import { TextPlugin } from 'gsap/dist/TextPlugin';
+    import { onMount } from 'svelte';
 
-// gsap.registerPlugin(ScrollTrigger, TextPlugin);
+	gsap.registerPlugin(ScrollTrigger, TextPlugin);
 </script>
 
-<h1>DAYUM</h1>
-
+<header></header>
+<section></section>
+<section></section>
+<section></section>
 
 <style>
-    
 </style>
