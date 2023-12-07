@@ -12,13 +12,20 @@
     gsap.to('.info', {
       duration: 1.5,
 	  x: 70,
-	  y: -10,
+	  y: 10,
 	  scrollTrigger:{
 		trigger:'.info',
-		start: 10,
+		markers: true,
+		start: 20,
+		end: 110,
+		scrub: 2,
+		toggleActions:'restart none none none'
+		//   one enter  onleave onenterback onleaveback
 	  }
     });
+	
   }
+
 
   onMount(() => {
     animateScroll(); // Trigger the animation when the component mounts
@@ -27,8 +34,12 @@
 </script>
 <!-- <div class="blob"></div> -->
 <header><img src="/logo.png" alt="plantswap"></header>
+
 <section class="wrapper">
 	<section class="info">
+	<p>In the Aftermath: Seeking Salvation in a Nuclear Wasteland, Discovering Healing Plants Amidst the Undead Horde</p>
+</section>
+<section class="info-2">
 	<p>In the Aftermath: Seeking Salvation in a Nuclear Wasteland, Discovering Healing Plants Amidst the Undead Horde</p>
 </section>
 
@@ -54,15 +65,16 @@
 		overflow-x: hidden;
 	}
 
-	 .blob {
-    /* Add styles for your blob element */
-	z-index: 2;
-    width: 100%;
-    height: 100px;
-    background-color: rgb(68, 255, 0); /* Replace with your desired blob styles */
+  .info p{
+	width: 60vw;
+	font-size: 20px;
+	background-color: var(--card-background);
+	border-radius: 10px;
+	padding: 1rem;
+	margin: 1rem;
   }
 
-  .info p{
+   .info-2 p{
 	width: 60vw;
 	font-size: 20px;
 	background-color: var(--card-background);
