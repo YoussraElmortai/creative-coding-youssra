@@ -6,24 +6,35 @@
 
 	gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
-	 // Function to animate the blob element
-  function animateBlob() {
-    gsap.to('.blob', {
-      duration: 1,
-      scale: 1.2, // Scale to 1.2 times its original size
-      ease: 'power2.out' // Easing function
+	 
+	// function to scrolltrigger trigger something
+  function animateScroll() {
+    gsap.to('.info', {
+      duration: 1.5,
+	  x: 70,
+	  y: -10,
+	  scrollTrigger:{
+		trigger:'.info',
+		start: 10,
+	  }
     });
   }
 
   onMount(() => {
-    animateBlob(); // Trigger the animation when the component mounts
+    animateScroll(); // Trigger the animation when the component mounts
   });
 	
 </script>
-
+<!-- <div class="blob"></div> -->
 <header><img src="/logo.png" alt="plantswap"></header>
-<section class="banner"></section>
-<div class="blob"></div>
+<section class="wrapper">
+	<section class="info">
+	<p>In the Aftermath: Seeking Salvation in a Nuclear Wasteland, Discovering Healing Plants Amidst the Undead Horde</p>
+</section>
+
+</section>
+
+
 
 <style>
 	header{
@@ -37,18 +48,27 @@
 		background-color: rgba(0, 0, 0, 0);
 	}
 
-	.banner{
-		height: 10vh;
+	.wrapper{
+		height: 100vh;
 		width: 100%;
-		background-color: var(--card-background);
-		border-bottom: solid 3px var(--card-background);
+		overflow-x: hidden;
 	}
 
 	 .blob {
     /* Add styles for your blob element */
-    width: 100px;
+	z-index: 2;
+    width: 100%;
     height: 100px;
-    background-color: red; /* Replace with your desired blob styles */
+    background-color: rgb(68, 255, 0); /* Replace with your desired blob styles */
+  }
+
+  .info p{
+	width: 60vw;
+	font-size: 20px;
+	background-color: var(--card-background);
+	border-radius: 10px;
+	padding: 1rem;
+	margin: 1rem;
   }
 
 </style>
