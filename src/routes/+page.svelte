@@ -20,7 +20,7 @@
 		scrub: 2,
 		toggleActions:'restart none none none'
 	  },
-	  stagger:0.1,
+	  stagger:4,
 
     });
 	
@@ -65,7 +65,7 @@
 
   .info p{
 	position: relative;
-	top: -300px;
+	top: -200px;
 	left: -500px;
 	width: 60vw;
 	font-size: 20px;
