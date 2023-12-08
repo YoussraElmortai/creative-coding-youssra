@@ -10,18 +10,18 @@
 	// function to scrolltrigger trigger something
   function animateScroll() {
     gsap.to('.info', {
-      duration: 1.5,
+      duration: 1,
 	  x: 170,
 	  y: 150,
 	  scrollTrigger:{
-		trigger:'.info',
+		trigger:'.wrapper',
 		markers: true,
 		start: 20,
 		end: 110,
 		scrub: 2,
 		toggleActions:'restart none none none'
 	  },
-	  stagger:0.5
+	  stagger:0.1,
 
     });
 	
@@ -72,15 +72,9 @@
 	border-radius: 10px;
 	padding: 1rem;
 	margin: 1rem;
+	margin-top: 2rem;
   }
 
-   .info-2 p{
-	width: 60vw;
-	font-size: 20px;
-	background-color: var(--card-background);
-	border-radius: 10px;
-	padding: 1rem;
-	margin: 1rem;
-  }
+
 
 </style>
