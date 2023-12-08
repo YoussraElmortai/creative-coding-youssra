@@ -20,7 +20,7 @@
 		scrub: 2,
 		toggleActions:'restart none none none'
 	  },
-	  stagger:4,
+	  stagger:0.1,
 
     });
 	
@@ -65,8 +65,9 @@
 
   .info p{
 	position: relative;
-	top: -200px;
-	left: -500px;
+	top: -100px;
+	left: -850px;
+	right: 200px;
 	width: 60vw;
 	font-size: 20px;
 	background-color: var(--card-background);
