@@ -11,11 +11,10 @@
   function animateScroll() {
     gsap.to('.info', {
       duration: 1,
-	  x: 170,
-	  y: 150,
+	  x: 1000,
+	  y: 100,
 	  scrollTrigger:{
 		trigger:'.wrapper',
-		markers: true,
 		start: 20,
 		end: 110,
 		scrub: 2,
@@ -33,7 +32,6 @@
   });
 	
 </script>
-<!-- <div class="blob"></div> -->
 <header><img src="/logo.png" alt="plantswap"></header>
 
 <section class="wrapper">
@@ -66,13 +64,20 @@
 	}
 
   .info p{
+	position: relative;
+	top: -300px;
+	left: -500px;
 	width: 60vw;
 	font-size: 20px;
 	background-color: var(--card-background);
 	border-radius: 10px;
 	padding: 1rem;
 	margin: 1rem;
-	margin-top: 2rem;
+	margin-top: 5rem;
+  }
+
+  .info p:hover{
+	color: var(--card-background);
   }
 
 
