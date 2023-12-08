@@ -11,8 +11,8 @@
   function animateScroll() {
     gsap.to('.info', {
       duration: 1.5,
-	  x: 70,
-	  y: 10,
+	  x: 170,
+	  y: 150,
 	  scrollTrigger:{
 		trigger:'.info',
 		markers: true,
@@ -20,8 +20,9 @@
 		end: 110,
 		scrub: 2,
 		toggleActions:'restart none none none'
-		//   one enter  onleave onenterback onleaveback
-	  }
+	  },
+	  stagger:0.5
+
     });
 	
   }
@@ -38,11 +39,10 @@
 <section class="wrapper">
 	<section class="info">
 	<p>In the Aftermath: Seeking Salvation in a Nuclear Wasteland, Discovering Healing Plants Amidst the Undead Horde</p>
-</section>
-<section class="info-2">
-	<p>In the Aftermath: Seeking Salvation in a Nuclear Wasteland, Discovering Healing Plants Amidst the Undead Horde</p>
-</section>
-
+	</section>
+	<section class="info">
+		<p>In the Aftermath: Seeking Salvation in a Nuclear Wasteland, Discovering Healing Plants Amidst the Undead Horde</p>
+	</section>
 </section>
 
 
