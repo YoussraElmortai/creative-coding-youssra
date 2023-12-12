@@ -11,6 +11,9 @@
       const x = Math.round((clientX / window.innerWidth) * 100);
       const y = Math.round((clientY / window.innerHeight) * 100);
 
+	    overlay.style.setProperty('--x', `${x}%`);
+        overlay.style.setProperty('--y', `${y}%`);
+
       gsap.to(overlay, {
         '--x': `${x}%`,
         '--y': `${y}%`,
@@ -54,10 +57,10 @@
 		text-decoration: none;
 		color: black;
 		font-size: 2rem;
-		background-color: rgb(255, 136, 231);
+		background-color: darkcyan;
 		padding: 0.5rem;
 		border-radius: 6px;
-		border: 2px solid rgb(255, 130, 186);
+		width: 20rem;
 	}
 
 
@@ -72,7 +75,7 @@
 		clip-path: circle(30px at var(--x, 50%) var(--y, 50%));
 	}
 	75% {
-		clip-path: circle(170px at var(--x, 50%) var(--y, 50%));
+		clip-path: circle(180px at var(--x, 50%) var(--y, 50%));
 	}
 	100% {
 		clip-path: circle(120px at var(--x, 50%) var(--y, 50%));
@@ -90,15 +93,16 @@
 		/* mask: url(https://static.thenounproject.com/png/3342460-200.png);
 		-webkit-mask: url(https://static.thenounproject.com/png/3342460-200.png);   */
 		clip-path: circle(120px at var(--x, 50%) var(--y,50%));
-		animation: clipAnimation 3s ease-out ;
+		animation: clipAnimation 4s ease-in ;
 		transition: clip-path 60ms;
 	}
 
 	.overlay a{
 		color: white;
-		background-color: rgb(120, 200, 0);
-		border: 2px solid greenyellow;
+		background-color: plum;
 	}
+
+
 
 
 
