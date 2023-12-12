@@ -17,8 +17,6 @@
         duration: 0.3,
         ease: 'sine.out'
       });
-	  overlay.style.setProperty('--maskX', `${x}%`);
-    overlay.style.setProperty('--maskY', `${y}%`);
     });
   });
 </script>
@@ -92,7 +90,7 @@
 		/* mask: url(https://static.thenounproject.com/png/3342460-200.png);
 		-webkit-mask: url(https://static.thenounproject.com/png/3342460-200.png);   */
 		clip-path: circle(120px at var(--x, 50%) var(--y,50%));
-		animation: clipAnimation 2s ease-out ;
+		animation: clipAnimation 3s ease-out ;
 		transition: clip-path 60ms;
 	}
 
