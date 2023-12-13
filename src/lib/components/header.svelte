@@ -86,8 +86,8 @@
 		/* mask: url(https://static.thenounproject.com/png/3342460-200.png);
 		-webkit-mask: url(https://static.thenounproject.com/png/3342460-200.png);   */
 		clip-path: circle(120px at var(--x, 50%) var(--y,50%));
-		animation: clipAnimation 4s ease-in ;
-		transition: clip-path 100ms;
+		animation: clipAnimation 4s  ;
+		transition: clip-path  0.3s cubic-bezier(0.61, 1, 0.88, 1);
 	}
 
 	.overlay a{
