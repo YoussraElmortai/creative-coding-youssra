@@ -13,12 +13,12 @@
 	    overlay.style.setProperty('--x', `${x}%`);
         overlay.style.setProperty('--y', `${y}%`);
 
-      gsap.to(overlay, {
-        '--x': `${x}%`,
-        '--y': `${y}%`,
-        duration: 0.3,
-        ease: 'sine.out'
-      });
+    //   gsap.to(overlay, {
+    //     '--x': `${x}%`,
+    //     '--y': `${y}%`,
+    //     duration: 0.3,
+    //     ease: 'sine.out'
+    //   });
     });
   });
 </script>
@@ -87,7 +87,7 @@
 		-webkit-mask: url(https://static.thenounproject.com/png/3342460-200.png);   */
 		clip-path: circle(120px at var(--x, 50%) var(--y,50%));
 		animation: clipAnimation 4s  ;
-		transition: clip-path  0.3s cubic-bezier(0.61, 1, 0.88, 1);
+		transition: clip-path  0.5s cubic-bezier(0.61, 1, 0.88, 1);
 	}
 
 	.overlay a{
