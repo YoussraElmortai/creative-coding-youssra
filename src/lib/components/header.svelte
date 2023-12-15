@@ -13,12 +13,12 @@
 	    overlay.style.setProperty('--x', `${x}%`);
         overlay.style.setProperty('--y', `${y}%`);
 
-    //   gsap.to(overlay, {
-    //     '--x': `${x}%`,
-    //     '--y': `${y}%`,
-    //     duration: 0.3,
-    //     ease: 'sine.out'
-    //   });
+      gsap.to(overlay, {
+        '--x': `${x}%`,
+       '--y': `${y}%`,
+         duration: 0.3,
+        ease: 'sine.out'
+      });
     });
   });
 </script>
