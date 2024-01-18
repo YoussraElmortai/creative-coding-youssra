@@ -6,7 +6,7 @@
 <!-- <Scrollanimation></Scrollanimation> -->
 
 <!-- week 2 spike -->
-<!-- <Header></Header> -->
+<Header></Header>
 
 
 <!--week 3 spike-->
