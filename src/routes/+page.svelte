@@ -10,10 +10,8 @@
 
 
 <!--week 3 spike-->
-<!-- sticky scrollly  -->
 
 
 <style>
 	
 </style>
-
